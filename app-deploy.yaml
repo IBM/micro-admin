@@ -1,0 +1,40 @@
+apiVersion: appsody.dev/v1beta1
+kind: AppsodyApplication
+metadata:
+  namespace: kabanero
+  creationTimestamp: null
+  labels:
+    image.opencontainers.org/title: micro-admin
+    stack.appsody.dev/id: nodejs-express
+    stack.appsody.dev/version: 0.2.8
+  name: micro-admin
+spec:
+  applicationImage: dev.local/micro-admin
+  createKnativeService: false
+  expose: true
+  livenessProbe:
+    failureThreshold: 12
+    httpGet:
+      path: /live
+      port: 3000
+    initialDelaySeconds: 5
+    periodSeconds: 2
+  monitoring:
+    labels:
+      k8s-app: micro-admin
+  readinessProbe:
+    failureThreshold: 12
+    httpGet:
+      path: /ready
+      port: 3000
+    initialDelaySeconds: 5
+    periodSeconds: 2
+    timeoutSeconds: 1
+  service:
+    annotations:
+      prometheus.io/scrape: "true"
+    port: 3000
+    type: NodePort
+  stack: nodejs-express
+  version: 1.0.0
+status: {}

@@ -1,0 +1,2 @@
+project-name: micro-admin
+stack: kabanero/nodejs-express:0.2
