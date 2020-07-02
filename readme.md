@@ -15,4 +15,4 @@
 
 ![GitHub Logo](images/dashboard.png)
 
-7. This is a microservice for [modernize-monolithic-architecture-using-IBM-CP4A](https://github.com/IBM/modernize-monolithic-architecture-using-IBM-CP4A) :
+7. This is a microservice for [modernize-monolithic-architecture-using-IBM-CP4A](https://github.com/IBM/modernize-monolithic-architecture-using-IBM-CP4A) 
